@@ -128,3 +128,54 @@ const feedData = [
     feedImage: "./Images/temple.jpeg",
   },
 ];
+
+const data = [
+  {
+    uID: 1,
+    uName: "Vignesh Murugan",
+    profileName: "me_mr_g",
+    profileImage: "./Images/My_image.jpg",
+    audio: "Original Audio",
+    feedImage: "./Images/temple.jpeg",
+  },
+  {
+    uID: 2,
+    uName: "Vignesh M",
+    profileImage: "./Images/My_image.jpg",
+    profileName: "mr_vicky",
+    audio: "",
+    feedImage: "./Images/temple.jpeg",
+  },
+  {
+    uID: 3,
+    uName: "Vicky Murugan",
+    profileImage: "./Images/My_image.jpg",
+    profileName: "v_m",
+    audio: "",
+    feedImage: "./Images/temple.jpeg",
+  },
+  {
+    uID: 4,
+    uName: "Vicky M",
+    profileImage: "./Images/My_image.jpg",
+    profileName: "me_mr_g",
+    audio: "Original Audio",
+    feedImage: "./Images/temple.jpeg",
+  },
+  {
+    uID: 5,
+    uName: "Vicky",
+    profileName: "me_mr_g",
+    profileImage: "./Images/My_image.jpg",
+    audio: "Original Audio",
+    feedImage: "./Images/temple.jpeg",
+  },
+  {
+    uID: 6,
+    uName: "Vignesh",
+    profileName: "me_mr_g",
+    profileImage: "./Images/My_image.jpg",
+    audio: "Original Audio",
+    feedImage: "./Images/temple.jpeg",
+  },
+];

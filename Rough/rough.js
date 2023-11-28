@@ -80,3 +80,43 @@
 // });
 
 // rootDiv.innerHTML = `<i class="fas fa-angle-left"></i>`;
+
+// rootDiv.innerHTML = `<button class="pre-btn"><img src="Images/arrow.png"></button>`;
+
+// <img src="${i.profileImage}"/>
+
+// const replied = [...document.querySelectorAll(".reply-enter")];
+// const likes = [...document.querySelectorAll(".heart-icon")];
+
+// likes.forEach((item, i) => {
+//   console.log("like clicked");
+//   replied[i].onclick = () => {
+//     // replied[i].addEventListener("click", () => {
+//     console.log("reply clicked");
+//     item.classList.toggle("red");
+
+//     item.classList.contains("red")
+//       ? (item.innerHTML = `<i class="fas fa-heart"></i>`)
+//       : (item.innerHTML = `<i class="far fa-heart"></i>`);
+//     // });
+//   };
+// });
+
+// filterTypes.push({
+//   id: "implementable_product",
+//   name: "Implementable Product",
+//   type: "MULTI_SELECT",
+//   additional: {
+//     options: [
+//       { label: "Payroll", value: "Payroll" },
+//       { label: "ARC", value: "ARC" },
+//       { label: "Analytics", value: "Analytics" },
+//       { label: "DRS", value: "DRS" },
+//       { label: "CMS", value: "CMS" },
+//       { label: "CRM", value: "CRM" },
+//       { label: "Galaxy", value: "Galaxy" },
+//       { label: "CDO", value: "CDO" },
+//       { label: "Tekion Pay", value: "Tekion Pay" },
+//     ],
+//   },
+// });

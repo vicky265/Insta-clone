@@ -1,0 +1,143 @@
+@import "tstyles/component.scss";
+
+.root{
+    display: flex;
+    position: relative;
+    margin: 0px;
+    margin-bottom: 1em;
+
+    span:first-child {
+        width: 100%;
+      }
+
+    :global(.ant-upload-list-item-progress) {
+        z-index: 1;
+    }
+    :global(.ant-upload-list-item) {
+        position: relative;
+        height: 2.2rem;
+        font-size: 1.4rem;
+        margin-top: .8rem
+    }
+    :global(.ant-upload-list-item-info) {
+        z-index: 2;
+        position: relative;
+        padding: 0 1.2rem 0 .4rem
+    }
+    :global(.ant-upload-list-item-info .anticon-paper-clip){
+        top: .5rem;
+        font-size: 1.4rem;
+    }
+
+    :global(.ant-upload-list-item .anticon-close){
+        opacity: 1;
+        z-index: 9;
+        font-size: 1.2rem;
+        top: .5rem
+    }
+    :global(.ant-upload-list-item-info .anticon-loading){
+        top: 0.7rem;
+    }
+}
+
+.imageAttachment{
+    flex: 0 0 100%;
+    height: 100%;
+    width: 100%;
+}
+.attachmentHover{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.attachmentHover:hover{
+    opacity: 0.9;
+}
+
+.uploadIconWrapper{
+     margin-bottom: 1.6rem;
+     .textUpload{
+        font-size: 1.4rem !important;
+     }
+     .plusIcon{
+         margin-top: 0.2rem;
+         margin-right: 0.5rem;
+
+     }
+     &:hover{
+        color: #40a9ff!important;
+    }
+}
+.modal{
+    min-width: 85vw;
+    max-width: 90vw;
+}
+.modalTitle{
+    @include flex($justify-content: flex-start, $align-items: center);
+    width: 96%;
+    & h2{
+        flex: auto;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 2rem;
+    }
+    & Button{
+        flex: 0 0 100px;
+        padding: 0;
+        & a{
+            background-color: transparent;
+            border: none;
+        }
+    }
+}
+.downloadTitle{
+    margin-left: 5px;
+}
+.thumbNails{
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.85);;
+    border-radius: 2px;
+    &:hover{
+        background-color: #c4dcfc;
+        opacity: 0.7;
+    }
+}
+.dummyPreviewDot{
+    font-size: 9px;
+    color: rgba(0,0,0,0.85);
+    align-items: center;
+    border: 0.5px solid #e7edf4;
+    border-radius: 2px;
+    width: 50px;
+    height: 50px;
+    &:hover{
+        background-color: #c4dcfc;
+    }
+}
+
+.bodyStyle {
+    height: calc(100% - 56px);
+    padding: 0;
+    padding-left: 40;
+    padding-right: 40;
+};
+
+.customArrowStyle {
+    font-size: 18px;
+    color: rgba(0,0,0,0.85);
+    background-color: #fff;
+    margin: auto 2px;
+};
+
+.attachmentContainer {
+    display: flex;
+}

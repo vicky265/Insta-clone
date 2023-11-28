@@ -1,0 +1,23 @@
+/* .upload-list-inline .ant-upload-list-item {
+    float: left;
+    width: 200px;
+    margin-inline-end: 8px;
+  }
+  
+  .ant-upload-rtl.upload-list-inline .ant-upload-list-item {
+    float: right;
+  } */
+
+.ant-upload-list-item-container {
+    width: 60px;
+}
+
+:where.ant-upload-list-item-error {
+    border-color: transparent;
+}
+
+.ant-upload-list {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}

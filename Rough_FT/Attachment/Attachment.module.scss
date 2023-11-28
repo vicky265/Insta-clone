@@ -1,0 +1,12 @@
+.attaches {
+  display: flex;
+  color: var(--accent-icon-accent-icon, #4285f4);
+  align-items: center;
+  font-size: 14px;
+}
+
+.attachment_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

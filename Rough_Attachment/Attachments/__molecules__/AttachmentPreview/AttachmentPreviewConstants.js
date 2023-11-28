@@ -1,0 +1,12 @@
+export const AUDIO_TYPE = 'audio';
+export const VIDEO_TYPE = 'video';
+export const PDF_TYPE = 'pdf';
+export const IMAGE_TYPE = 'image';
+export const UNSUPPORTED = 'unsupported';
+export const IS_IMAGE_REGEX = new RegExp(/(jpeg|jpg|gif|png)$/, 'i');
+export const IS_PDF_REGEX = new RegExp(/pdf$/, 'i');
+export const IS_AUDIO_REGEX = new RegExp(/(mp3|m4a|wma|wav|ogg|aac|flac|alac|aiff)$/, 'i');
+export const IS_VIDEO_REGEX = new RegExp(/(mp4|mov|avi)$/, 'i');
+export const MOVE_LEFT = -1;
+export const MOVE_RIGHT = 1;
+export const UNSUPPORTED_TXT = __('Unsupported file format');

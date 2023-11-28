@@ -1,0 +1,13 @@
+@import 'tstyles/component.scss';
+
+.DealerViewContainer {
+  @include flex($flex-flow: column nowrap);
+  // height: 100%;
+  // TODO : layout change
+  height: calc(100vh - 10rem);
+}
+
+.siteLayoutBackground {
+  background: var(--white);
+  cursor: default;
+}

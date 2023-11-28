@@ -1,3 +1,22 @@
+function getTime() {
+  let d = new Date(Date.now());
+
+  hours = d.getHours();
+  ampm = hours >= 12 ? "pm" : "am";
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  minutes = d.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  cTime = hours + ":" + minutes + " " + ampm;
+  return cTime;
+}
+
 function createStatus({ imageURL, uName }) {
   const image = document.createElement("img");
   image.setAttribute("data-src", imageURL);
@@ -5,7 +24,6 @@ function createStatus({ imageURL, uName }) {
   //   image.setAttribute("onclick", "show(" + imageURL + ")");
   //   image.setAttribute("onclick", "show()");
   image.setAttribute("class", "image");
-  //   style = "height:400px; width:400px; display:none;";
 
   const prevImage = document.createElement("img");
   prevImage.setAttribute("data-src", imageURL);
@@ -27,11 +45,17 @@ function createStatus({ imageURL, uName }) {
   return parentDiv;
 }
 
-likePost(savePost);
-
 function createMultipleStatus(statuses) {
   const rootDiv = document.getElementById("status-container");
-  rootDiv.innerHTML = `<button class="pre-btn"><img src="Images/arrow.png" alt=""></button>`;
+
+  btnImg1 = document.createElement("img");
+  btnImg1.setAttribute("src", "Images/arrow.png");
+
+  left = document.createElement("button");
+  left.setAttribute("class", "pre-btn");
+  left.appendChild(btnImg1);
+
+  rootDiv.appendChild(left);
 
   wrap = document.createElement("div");
   wrap.setAttribute("class", "wrapper");
@@ -41,9 +65,13 @@ function createMultipleStatus(statuses) {
   }
   rootDiv.appendChild(wrap);
 
+  btnImg2 = document.createElement("img");
+  btnImg2.setAttribute("src", "Images/arrow.png");
+
   right = document.createElement("button");
   right.setAttribute("class", "nxt-btn");
-  right.innerHTML = `<img src="Images/arrow.png" alt="">`;
+  right.appendChild(btnImg2);
+
   rootDiv.appendChild(right);
 }
 createMultipleStatus(statuses);
@@ -91,19 +119,16 @@ function listSuggestion(sugg) {
 }
 listSuggestion(sugg);
 
-function likePost(callBack) {
+function likePost() {
   document.querySelectorAll(".heart-icon").forEach((item) => {
     item.onclick = () => {
       item.classList.toggle("red");
 
-      if (item.classList.contains("red")) {
-        item.innerHTML = `<i class="fas fa-heart"></i>`;
-      } else {
-        item.innerHTML = `<i class="far fa-heart"></i>`;
-      }
+      item.classList.contains("red")
+        ? (item.innerHTML = `<i class="fas fa-heart"></i>`)
+        : (item.innerHTML = `<i class="far fa-heart"></i>`);
     };
   });
-  callBack();
 }
 
 function savePost() {
@@ -111,11 +136,9 @@ function savePost() {
     item.onclick = () => {
       item.classList.toggle("grey");
 
-      if (item.classList.contains("grey")) {
-        item.innerHTML = `<i class="fa-solid fa-bookmark"></i>`;
-      } else {
-        item.innerHTML = `<i class="fa-regular fa-bookmark"></i>`;
-      }
+      item.classList.contains("grey")
+        ? (item.innerHTML = `<i class="fa-solid fa-bookmark"></i>`)
+        : (item.innerHTML = `<i class="fa-regular fa-bookmark"></i>`);
     };
   });
 }
@@ -150,7 +173,7 @@ function commentEnter(e) {
 
       resetComment(e.target);
 
-      //   e.target.parentNode.nextSibling.nextSibling.appendChild(div);
+      // e.target.parentNode.nextSibling.nextSibling.appendChild(div);
       e.target.parentNode.nextSibling.nextSibling.insertAdjacentElement(
         "afterend",
         div
@@ -163,77 +186,53 @@ function resetComment(comment) {
   comment.value = "";
 }
 
-function getTime() {
-  let d = new Date(Date.now());
-
-  hours = d.getHours();
-  ampm = hours >= 12 ? "pm" : "am";
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
-  minutes = d.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  cTime = hours + ":" + minutes + " " + ampm;
-  return cTime;
-}
-
 function instaFeed(feedData) {
   const rootDiv = document.getElementById("story-container");
   for (let i of feedData) {
-    // console.log("Instafeed");
-
     const div = document.createElement("div");
     div.classList = "each-story";
-
     div.innerHTML = `
-        <div class="i-story-my-profile">
-                <div class="image-content profile-image"> 
-                    <img src=${i.profileImage} alt="Profile Image" />
-                    <div class="story-name-details">
-                    <strong> ${i.profileName} </strong>
-                    <p> ${i.audio} </p>
-                    </div>
-                </div>
-                <i class="fa-solid fa-ellipsis"></i>
+          <div class="i-story-my-profile">
+            <div class="image-content profile-image">
+              <img src="${i.profileImage}"/>
+              <div class="story-name-details">
+                <strong> ${i.profileName} </strong>
+                <p>${i.audio}</p>
               </div>
-                <div class="feed-image" > 
-              <img src=${i.feedImage} alt="Feed Image" />
-              </div>
-              <section class="list-icons">
-                <div class="like-options">
-                  <a class="heart-icon">
-                    <i class="far fa-heart"></i>
-                  </a>
-                  <a><i class="fa-regular fa-comments go-to-comments"></i></a>
-                  <a><i class="fa-regular fa-paper-plane"></i></a>
-                </div>
-                <a class="save-icon"><i class="fa-regular fa-bookmark"></i></a>
-              </section>
-
-              <div class="total-likes" id="total-likes"></div>
-
-              <div class="liked-by" id="liked-by"></div>
-
-                <div class="comment-input comment-enter" id="each-comment">
-                  <input
-                    type="text"
-                    name="comment"
-                    id="comment"
-                    placeholder="Add a comment here"
-                  />
-                  
-                </div>
-              <div class="comments-container"></div>
+            </div>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+          <div class="feed-image">
+            <img src="${i.feedImage}" alt="Feed Image" />
+          </div>
+          <section class="list-icons">
+            <div class="like-options">
+              <a class="heart-icon">
+                <i class="far fa-heart"></i>
+              </a>
+              <a><i class="fa-regular fa-comments go-to-comments"></i></a>
+              <a><i class="fa-regular fa-paper-plane"></i></a>
+            </div>
+            <a class="save-icon"><i class="fa-regular fa-bookmark"></i></a>
+          </section>
+      
+          <div class="total-likes" id="total-likes"></div>
+          
+          <div class="liked-by" id="liked-by"></div>
+          
+          <div class="comment-input comment-enter" id="each-comment">
+            <input
+              type="text"
+              name="comment"
+              id="comment"
+              placeholder="Add a comment here"
+            />
+          </div>
+          <div class="comments-container"></div>
         `;
     rootDiv.appendChild(div);
-    likePost();
-    savePost();
   }
+  likePost1(savePost);
 }
 
 instaFeed(feedData);
@@ -241,11 +240,10 @@ const enterComment = document.getElementsByClassName("comment-enter");
 Array.from(enterComment).forEach((element) => {
   element.addEventListener("keypress", function (e) {
     commentEnter(e);
-    likePost();
+    likePost();SAXA
 
     document.querySelectorAll(".reply").forEach((item) => {
       item.onclick = () => {
-        console.log("item onclick : ", item.parentElement.parentElement);
         addReply(item);
       };
     });
@@ -278,6 +276,7 @@ function replyEnter(e, thisComment) {
     if (replyValue != "") {
       const div = document.createElement("div");
       div.classList = "each-reply";
+
       div.innerHTML = `
         <div class="reply" id="comment">
           <small> ${addTime}&nbsp&nbsp;</small>
@@ -321,12 +320,23 @@ wrapper.forEach((item, i) => {
   let containerWidth = containerDimensions.width;
 
   nxtBtn[i].addEventListener("click", () => {
-    // console.log("next btn clicked");
     item.scrollLeft += containerWidth;
   });
 
   preBtn[i].addEventListener("click", () => {
-    // console.log("prev btn clicked");
     item.scrollLeft -= containerWidth;
   });
 });
+
+function likePost1(callback) {
+  document.querySelectorAll(".heart-icon").forEach((item) => {
+    item.onclick = () => {
+      item.classList.toggle("red");
+
+      item.classList.contains("red")
+        ? (item.innerHTML = `<i class="fas fa-heart"></i>`)
+        : (item.innerHTML = `<i class="far fa-heart"></i>`);
+    };
+  });
+  callback();
+}

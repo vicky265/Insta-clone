@@ -1,0 +1,174 @@
+.attachmentPreview .ant-upload.ant-upload-drag.ant-upload {
+    padding: 0px!important;
+    margin: 0px 0px 12px 0px!important;
+}
+.attachmentPreview .ant-upload-list-picture-card .ant-upload-list-item {
+    padding: 0px!important;
+}
+.ImagePreviewModal {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+.Image-preview-modal {
+    align-items: center;
+    background: #f6f8f9;
+    border: 1px solid #e8ecee;
+    border-radius: 8px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    outline: 0;
+    overflow: hidden;
+    position: relative;
+}
+.Image--large-modal .Thumbnail-image-modal {
+    height: 70vh;
+}
+.Thumbnail-image-modal {
+    max-width: 100%;
+    position: relative;
+}
+.slick-arrow:before{
+    color: rgba(0,0,0,0.85);
+    font-size: 20px;
+    font-weight: 700;
+}
+.slick-prev{
+    margin-left: 2px;
+}
+.slick-prev:before {
+    content: '';
+}
+.slick-next{
+    margin-right: 2px;
+}
+.slick-next:before{
+    content: '';
+}
+.slick-dots{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    bottom: 15px;
+}
+
+.slick-dots li{
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+}
+li.slick-active {
+    opacity: 1;
+}
+.AttachmentCard-svg-thumbnail {
+    fill: #9ca6af;
+    height: 32px;
+    margin: 16px 10px;
+    min-width: 32px;
+    width: 32px;
+}
+.AttachmentCard-info {
+    align-items: center;
+    display: flex;
+}
+.slick-dots .slick-active{
+background-color: rgb(195 194 194);
+border-radius: 2px;
+}
+.attachmentPreviewModal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.pdfWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+    height: 50rem;
+}
+.pageInfo{
+    flex: 0 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.documentWrapper{
+    flex: auto;
+}
+.audiowrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.audiowrapper audio{
+    flex: 0 0 50%;
+    margin-top: 10%;
+}
+.videoWrapper{
+    width: 100%;
+}
+.videoWrapper video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.unsupported{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto 0;
+}
+.pdf-loader{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2rem;
+}
+.ant-upload-text {
+    margin-left: 2px;
+    margin-top: 6px;
+}
+.ant-upload-plus {
+    margin-top: 3px;
+}
+
+.modal__attachmentPreview .ant-modal-content,
+.modal__attachmentPreview .slick-slider,
+.modal__attachmentPreview .slick-list,
+.modal__attachmentPreview .slick-slide div {
+    height: 100%;
+}
+
+.attachmentPreviewModal img {
+    object-fit: contain;
+}
+
+.slick-slide {
+    overflow: auto;
+}
+
+.slick-dots {
+    overflow: hidden;
+}
+
+.slick-track {
+    height: calc(100% - 80px);
+    overflow: hidden;
+}

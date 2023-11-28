@@ -332,7 +332,6 @@ input {
 
 .profile-image {
   display: flex;
-  align-items: center;
 }
 
 .profile-image img {
